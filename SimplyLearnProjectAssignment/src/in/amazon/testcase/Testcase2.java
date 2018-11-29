@@ -7,6 +7,8 @@ package in.amazon.testcase;
  * @author Sheik
  *
  */
-public class Testcase2 {
+public class Testcase2 
+{
 
+	
 }

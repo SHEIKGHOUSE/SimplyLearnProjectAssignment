@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import in.amazon.config.TestConfiguration;
+import in.amazon.pages.SignInPage;
 import in.amazon.pages.WelcomePage;
 
 /**
@@ -24,16 +25,16 @@ public class Testcase1
 	  public void beforeMethod() 
 	  {
 		     driver = TestConfiguration.getDriverInstance();
-		  
+		     driver.manage().window().maximize();
 	  }	
 	@Test
 	public void tc1()
 	{
 		WelcomePage wps=PageFactory.initElements(driver, WelcomePage.class);
 		wps.Signin();
+		SignInPage sip=PageFactory.initElements(driver, SignInPage.class);
+		sip.inputemailid("");
+		SignInPage.continuebutton();
 	}
-	
-	
-	
 	
 }
