@@ -21,6 +21,22 @@ public class SignInPage
 		useremail.sendKeys(un);
 	}
 	
+	@FindBy(id="ap_password")
+	static WebElement userpassword;
+	
+	public static void inputpassword(String pw)
+	{
+		userpassword.sendKeys(pw);
+	}
+	
+	@FindBy(id="signInSubmit")
+	static WebElement loginbutton;
+	
+	public static void loginbutton()
+	{
+		loginbutton.click();
+	}
+
     @FindBy(id="continue")
 	static WebElement continuebutton;
 	

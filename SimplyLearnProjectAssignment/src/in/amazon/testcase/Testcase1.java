@@ -15,7 +15,7 @@ import in.amazon.pages.WelcomePage;
 /**
  * @author Sheik
  *
- *This test case is for Loging into amazon website with valid credentails
+ *This test case is for Loging into amazon website with valid credentials
  */
 public class Testcase1 
 {
@@ -28,13 +28,16 @@ public class Testcase1
 		     driver.manage().window().maximize();
 	  }	
 	@Test
-	public void tc1()
+	public void tc1() throws Exception
 	{
 		WelcomePage wps=PageFactory.initElements(driver, WelcomePage.class);
 		wps.Signin();
-		SignInPage sip=PageFactory.initElements(driver, SignInPage.class);
-		sip.inputemailid("");
+		PageFactory.initElements(driver, SignInPage.class);
+		SignInPage.inputemailid("");
 		SignInPage.continuebutton();
+		Thread.sleep(5000);
+		SignInPage.inputpassword("");
+		SignInPage.loginbutton();
 	}
 	
 }
