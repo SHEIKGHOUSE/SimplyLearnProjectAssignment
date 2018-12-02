@@ -22,10 +22,11 @@ public class Testcase1
 	
 	WebDriver driver;
 	@BeforeMethod
-	  public void beforeMethod() 
+	  public WebDriver beforeMethod() 
 	  {
 		     driver = TestConfiguration.getDriverInstance();
 		     driver.manage().window().maximize();
+		     return driver;
 	  }	
 	@Test
 	public void tc1() throws Exception
@@ -33,10 +34,10 @@ public class Testcase1
 		WelcomePage wps=PageFactory.initElements(driver, WelcomePage.class);
 		wps.Signin();
 		PageFactory.initElements(driver, SignInPage.class);
-		SignInPage.inputemailid("");
+		SignInPage.inputemailid();
 		SignInPage.continuebutton();
 		Thread.sleep(5000);
-		SignInPage.inputpassword("");
+		SignInPage.inputpassword();
 		SignInPage.loginbutton();
 	}
 	
